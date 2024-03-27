@@ -1,0 +1,16 @@
+[
+	{
+		"modid": "tickingentity",
+		"name": "Ticking Entity Crash Mod",
+		"description": "Let your game crash by ticking entities! Do /summon tickingentity:centaur to crash your game!",
+		"version": "${version}",
+		"mcversion": "1.12.2",
+		"url": "",
+		"updateUrl": "",
+		"authorList": ["Paul Vogel"],
+		"credits": "",
+		"logoFile": "",
+		"screenshots": [],
+		"dependencies": []
+	}
+]
