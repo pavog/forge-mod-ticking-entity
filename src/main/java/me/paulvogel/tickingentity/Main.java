@@ -1,7 +1,6 @@
 package me.paulvogel.tickingentity;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -9,6 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Main.MODID)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Main {
 
     public static final String MODID = "tickingentity";
@@ -24,12 +24,7 @@ public class Main {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void registerCentaurEntity(final RegistryEvent.Register<EntityType<?>> event) {
-            event.getRegistry().register(
-                    EntityType.Builder
-                            .create(CentaurEntity.class, CentaurEntity::new)
-                            .build(CentaurEntity.ENTITY_CENTAUR_NAME)
-                            .setRegistryName(new ResourceLocation(Main.MODID, CentaurEntity.ENTITY_CENTAUR_NAME))
-            );
+            event.getRegistry().register(CentaurEntity.CENTAUR_ENTITY_TYPE);
         }
     }
 }
