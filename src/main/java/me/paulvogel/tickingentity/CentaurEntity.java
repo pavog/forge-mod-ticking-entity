@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.network.NetworkHooks;
 
 import static me.paulvogel.tickingentity.Main.MODID;
 
@@ -54,6 +55,6 @@ public class CentaurEntity extends Entity {
 
     @Override
     public IPacket<?> createSpawnPacket() {
-        return null;
+        return NetworkHooks.getEntitySpawningPacket(this);
     }
 }
